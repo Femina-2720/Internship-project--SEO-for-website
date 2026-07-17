@@ -15,17 +15,17 @@
 
     <style>
         :root {
-            --sidebar-bg: #153259;
-            --sidebar-active: #0f2441;
-            --bg-color: #F8F9FA;
+            --sidebar-bg: #111827;
+            --sidebar-active: #1F2937;
+            --bg-color: #FFFFFF;
             --card-bg: #FFFFFF;
-            --text-main: #333333;
-            --text-muted: #6C757D;
-            --text-light: #8E98A8;
-            --blue-accent: #2382F7;
-            --green-accent: #4CAF50;
-            --green-score: #48BB78;
-            --border-color: #E2E8F0;
+            --text-main: #111827;
+            --text-muted: #6B7280;
+            --text-light: #9CA3AF;
+            --blue-accent: #2563EB;
+            --green-accent: #10B981;
+            --green-score: #10B981;
+            --border-color: #E5E7EB;
             --font-main: 'Inter', sans-serif;
         }
 
@@ -36,6 +36,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             display: flex;
+            flex-direction: column;
             min-height: 100vh;
         }
 
@@ -330,11 +331,19 @@
         }
         
         /* Top Nav */
-        .top-nav {
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            padding: 1.5rem max(4rem, calc(50vw - 600px + 4rem));
+            margin: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            animation: fadeUp 0.5s ease-out forwards;
         }
 
         .logo {
@@ -348,7 +357,7 @@
             color: var(--blue-accent);
         }
 
-        .top-nav nav {
+        header nav {
             display: flex;
             gap: 2.5rem;
             align-items: center;
@@ -356,18 +365,18 @@
             font-size: 0.95rem;
         }
 
-        .top-nav nav a {
+        header nav a {
             text-decoration: none;
             color: var(--text-main);
             padding-bottom: 0.5rem;
             position: relative;
         }
 
-        .top-nav nav a.active {
+        header nav a.active {
             color: var(--blue-accent);
         }
 
-        .top-nav nav a.active::after {
+        header nav a.active::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -375,6 +384,12 @@
             width: 100%;
             height: 2px;
             background-color: var(--blue-accent);
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                padding: 1.5rem 2rem;
+            }
         }
         
         /* Floating Help Button */
@@ -401,18 +416,19 @@
 </head>
 <body>
 
+    <!-- Navigation Header -->
+    <header>
+        <a href="index.html" class="logo">FEMINA K </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="seobility.html" class="active">Seobility</a>
+        </nav>
+    </header>
+
     <!-- Main Content -->
     <div class="main-content">
         
-        <!-- Navigation Header -->
-        <header class="top-nav">
-            <a href="index.html" class="logo">FEMINA K </a>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="blog.html">Blog</a>
-                <a href="seobility.html" class="active">Seobility</a>
-            </nav>
-        </header>
         <h2 style="color: var(--sidebar-bg); margin-top: 1rem; margin-bottom: 1.5rem;">Before Analysis of SEO for the Website</h2>
         
         <!-- Top Section -->
